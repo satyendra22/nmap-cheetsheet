@@ -4,8 +4,8 @@ NMAP is one of the most popular network mappers in the infosec world. It’s uti
 
 ```code nmap [scan types] [options] {172.16.1.1 specification}```
 
-* **Port Specification options**
-
+**Port Specification options**
+----
 | Syntax | Example | Description |
 |--------|---------|-------------|
 |-P|	nmap –p 23 172.16.1.1|	Port scanning port specific port|
@@ -19,6 +19,7 @@ NMAP is one of the most popular network mappers in the infosec world. It’s uti
  
 
 **Host /172.16.1.1 discovery**
+----
 |Switch/Syntax|	Example|	Description|
 |-----|---------|-----|
 |-sL|	nmap 172.16.1.1-5 -sL|	List 172.16.1.1 without scanning|
@@ -32,6 +33,7 @@ NMAP is one of the most popular network mappers in the infosec world. It’s uti
  
 
 **Nmap Port Scan types**
+----
 |Switch/Syntax|	Example|	Description|
 |---|--|---|
 |-sS|	nmap 172.16.1.1 -sS|	TCP SYN port scan|
@@ -47,6 +49,9 @@ NMAP is one of the most popular network mappers in the infosec world. It’s uti
  
 
 **Nmap Port Selection**
+----
+|	Example|	Description|
+|---|--|
 |nmap 172.16.1.1|	single IP scan|
 |nmap 172.16.1.1 172.16.100.1|	scan specific IPs|
 |nmap 172.16.1.1-254|	scan a range of IPs|
@@ -57,43 +62,56 @@ NMAP is one of the most popular network mappers in the infosec world. It’s uti
  
 
 **Use of NMAP scripts NSE**
-nmap --script= test script 172.16.1.0/24	execute thee listed script against target IP address
-nmap --script-update-db	adding new scripts
-nmap -sV -sC	use of safe default scripts for scan
-nmap --script-help="Test Script"	get help for script
+----
+|	Example|	Description|
+|---|--|
+|nmap --script= test script 172.16.1.0/24	|execute thee listed script against target IP address|
+|nmap --script-update-db	|adding new scripts|
+|nmap -sV -sC	use of safe |default scripts for scan|
+|nmap --script-help="Test Script"	|get help for script|
 
-Firewall proofing
-nmap -f [172.16.1.1]	scan fragment packets
-nmap –mtu [MTU] [172.16.1.1]	specify MTU
-nmap -sI [zombie] [172.16.1.1]	scan idle zoombie
-nmap –source-port [port] [172.16.1.1]	manual source port - specify
-nmap –data-length [size] [172.16.1.1]	randomly append data
-nmap –randomize-hosts [172.16.1.1]	172.16.1.1 scan order randomization
-nmap –badsum [172.16.1.1]	bad checksum
+**Firewall proofing**
+----
+|	Example|	Description|
+|---|--|
+|nmap -f [172.16.1.1]	|scan fragment packets|
+|nmap –mtu [MTU] [172.16.1.1]	|specify MTU|
+|nmap -sI [zombie] [172.16.1.1]	|scan idle zoombie|
+|nmap –source-port [port] [172.16.1.1]	|manual source port - specify|
+|nmap –data-length [size] [172.16.1.1]	|randomly append data|
+|nmap –randomize-hosts [172.16.1.1]	172.16.1.1 |scan order randomization|
+|nmap –badsum [172.16.1.1]	|bad checksum|
  
 
-NMAP output formats
-Default/normal output	nmap -oN scan.txt 172.16.1.1
-XML	nmap -oX scanr.xml 172.16.1.1
-Grepable format	snmap -oG grep.txt 172.16.1.1
-All formats	nmap -oA 172.16.1.1
+**NMAP output formats**
+----
+|Description|	Syntax|
+|---|--|
+|Default/normal output|	nmap -oN scan.txt 172.16.1.1|
+|XML|	nmap -oX scanr.xml 172.16.1.1|
+|Grepable format|	snmap -oG grep.txt 172.16.1.1|
+|All formats|	nmap -oA 172.16.1.1|
 
 
-Scan options
-Syntax	Description
-nmap -sP 172.16.1.1	Ping scan only
-nmap -PU 172.16.1.1	UDP ping scan
-nmap -PE 172.16.1.1	ICMP echo ping
-nmap -PO 172.16.1.1	IP protocol ping
-nmap -PR 172.16.1.1	ARP ping
-nmap -Pn 172.16.1.1	Scan without pinging
-nmap –traceroute 172.16.1.1	Traceroute
+**Scan options**
+----
+|Syntax|	Description|
+|---|--|
+|nmap -sP 172.16.1.1	|Ping scan only|
+|nmap -PU 172.16.1.1	|UDP ping scan|
+|nmap -PE 172.16.1.1	|ICMP echo ping|
+|nmap -PO 172.16.1.1	|IP protocol ping|
+|nmap -PR 172.16.1.1	|ARP ping|
+|nmap -Pn 172.16.1.1	|Scan without pinging|
+|nmap –traceroute 172.16.1.1	|Traceroute|
 
-NMAP Timing options
-Syntax	Description
-nmap -T0 172.16.1.1	Slowest scan
-nmap -T1 172.16.1.1	Tricky scan to avoid IDS
-nmap -T2 172.16.1.1	Timely scan
-nmap -T3 172.16.1.1	Default scan timer
-nmap -T4 172.16.1.1	Aggressive scan
-nmap -T5 172.16.1.1	Very aggressive scan
+**NMAP Timing options**
+----
+|Syntax	|Description|
+|---|---|
+|nmap -T0 172.16.1.1	|Slowest scan|
+|nmap -T1 172.16.1.1	|Tricky scan to avoid IDS|
+|nmap -T2 172.16.1.1	|Timely scan|
+|nmap -T3 172.16.1.1	|Default scan timer|
+|nmap -T4 172.16.1.1	|Aggressive scan|
+|nmap -T5 172.16.1.1	|Very aggressive scan|
